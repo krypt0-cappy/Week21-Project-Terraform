@@ -1,25 +1,7 @@
-#---networking/variables.tf---
-
-variable "vpc_cidr" {
-  type = string
-}
-
-variable "public_cidrs" {
-  type = list(any)
-}
-
-variable "private_cidrs" {
-  type = list(any)
-}
+#---root/variables.tf---
 
 variable "access_ip" {
   type = string
+  default = "174.57.67.44/32"
 }
 
-variable "public_subnet_count" {
-  default = 3
-}
-
-variable "private_subnet_count" {
-  default = 3
-}
