@@ -156,7 +156,7 @@ resource "aws_security_group" "loadbalancer-sg" {
     from_port   = 22
     to_port     = 22
     protocol    = "tcp"
-    cidr_blocks = [aws_security_group.bastion-host-sg.id]
+    security_groups = [aws_security_group.bastion-host-sg.id]
   }
 
   egress {
@@ -170,7 +170,7 @@ resource "aws_security_group" "loadbalancer-sg" {
     from_port   = 80
     to_port     = 80
     protocol    = "tcp"
-    cidr_blocks = [aws_security_group.web_tier_sg.id]
+    security_groups = [aws_security_group.web_tier_sg.id]
   }
 
   egress {
